@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">LugaLuga</string>
     <string name="input">Senha</string>
+    <string name="inputEmail">Email</string>
+    <string name="btnLogin">Login</string>
+    <string name="textEsqueci">Esqueci a senha</string>
 </resources>

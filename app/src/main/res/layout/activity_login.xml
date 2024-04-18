@@ -5,30 +5,33 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginActivity">
+    tools:context="view.loginActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/logoapp" />
+        app:srcCompat="@drawable/logoapp"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/inputEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:layout_marginBottom="20px" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,17 +47,30 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnL"
         android:layout_width="129dp"
         android:layout_height="52dp"
         android:backgroundTint="@color/blue"
-        android:text="Login"
+        android:text="@string/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField2" />
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField2"
+        />
+
+    <TextView
+        android:id="@+id/esqueci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textEsqueci"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnL"
+        android:textColor="@color/red"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
