@@ -6,7 +6,7 @@ public class produto {
     private int preco;
     private String quantidade;
     private boolean status;
-
+//teste
     public produto(){
 
     }
