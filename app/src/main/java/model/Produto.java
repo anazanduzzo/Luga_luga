@@ -1,17 +1,17 @@
-package com.example.lugaluga;
+package model;
 
-public class produto {
+public class Produto {
     private String nomePoduto;
     private String descricao;
     private int preco;
     private String quantidade;
     private boolean status;
 //teste
-    public produto(){
+    public Produto(){
 
     }
 
-    public produto(String nomePoduto, String descricao, int preco, String quantidade, boolean status) {
+    public Produto(String nomePoduto, String descricao, int preco, String quantidade, boolean status) {
         this.nomePoduto = nomePoduto;
         this.descricao = descricao;
         this.preco = preco;
