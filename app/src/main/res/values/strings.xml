@@ -5,6 +5,8 @@
     <string name="btnLogin">Login</string>
     <string name="textEsqueci">Esqueci a senha</string>
     <string name="tvNome">Nome do produto</string>
+    <string name="tvQtd">Quantidade</string>
     <string name="tvPreco">R$ 00,00</string>
     <string name="tvDescr">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</string>
+    <string name="aluga">Alugar</string>
 </resources>
