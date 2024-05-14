@@ -9,4 +9,21 @@
     <string name="tvPreco">R$ 00,00</string>
     <string name="tvDescr">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</string>
     <string name="aluga">Alugar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="nomeUsu">Nome</string>
+    <string name="nomeInput">Insira seu nome</string>
+    <string name="cpf">CPF</string>
+    <string name="niver">Data de Nascimento</string>
+    <string name="cep">CEP</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="logradouroInput">insira o logradouro</string>
+    <string name="nro">N° </string>
+    <string name="compl">Complemento</string>
+    <string name="complInput">insira o complemento</string>
+    <string name="bairro">Bairro</string>
+    <string name="bairroInput">insira o bairro</string>
+    <string name="cidade">Cidade e UF</string>
+    <string name="cidadeInput">insira a Cidade e UF</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
 </resources>

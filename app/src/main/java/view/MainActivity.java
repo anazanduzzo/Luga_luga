@@ -82,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
     public void CriarListaProdutos(){
 
         Produto produto = new Produto("Iphone 13",
@@ -97,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
         produto = new Produto("Fone",
                 "fone bluetooth,cor roxa",
                 200,
-                "18",
-                true
+                "0",
+                false
         );
         produtoList.add(produto);
 
@@ -106,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
           "Notebook",
           "Dell, SSD 256gb, cor preta",
           3500,
-          "100",
-          true
+          "0",
+          false
         );
         produtoList.add(produto);
 
@@ -133,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
                 "Air tag",
                 "localizador da apple",
                 369,
-                "200",
-                true
+                "0",
+                false
         );
         produtoList.add(produto);
 

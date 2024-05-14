@@ -43,6 +43,11 @@ public class ProdutoActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
 
         produto = getIntent().getExtras().getParcelable("produto");
+        if (produto.getQuantidade().equals("0")){
+            btn.setEnabled(false);
+            btn.setText("Indisponível");
+            btn.setTextColor(getColor(R.color.red));
+        }
 
         nomeProduto.setText(produto.getNomePoduto());
         qtdProduto.setText(String.valueOf(produto.getQuantidade()));
@@ -57,8 +62,11 @@ public class ProdutoActivity extends AppCompatActivity {
                 builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(ProdutoActivity.this, "Produto adicionado com sucesso!",
+                        Toast.makeText(ProdutoActivity.this, "Produto solicitado com sucesso!",
                                 Toast.LENGTH_SHORT).show();
+                        btn.setText("Solicitado");
+                        btn.setBackgroundColor(getColor(R.color.yellow));
+                        btn.setEnabled(false);
                     }
                 });
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
