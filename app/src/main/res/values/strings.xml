@@ -22,8 +22,41 @@
     <string name="complInput">insira o complemento</string>
     <string name="bairro">Bairro</string>
     <string name="bairroInput">insira o bairro</string>
-    <string name="cidade">Cidade e UF</string>
+    <string name="cidade">Cidade</string>
+    <string name="uf">UF</string>
     <string name="cidadeInput">insira a Cidade e UF</string>
     <string name="email">Email</string>
     <string name="senha">Senha</string>
+
+    <string-array name="uf_cadastro">
+
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SP</item>
+        <item>SE</item>
+        <item>TO</item>
+
+    </string-array>
 </resources>

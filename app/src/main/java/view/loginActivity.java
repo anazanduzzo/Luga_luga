@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class loginActivity extends AppCompatActivity {
 
     private Button btnLogin;
+    private Button btnCadastrar;
 
     private TextInputLayout inputEmail,inputSenha;
     @Override
@@ -26,8 +27,8 @@ public class loginActivity extends AppCompatActivity {
             inputSenha = findViewById(R.id.outlinedTextField2);
 
             btnLogin = findViewById(R.id.btnL);
+            Intent intent = new Intent(this, MainActivity.class);
 
-        Intent intent = new Intent(this, MainActivity.class);
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -36,6 +37,15 @@ public class loginActivity extends AppCompatActivity {
                     }
                 }
             });
+            btnCadastrar = findViewById(R.id.btnL2);
+            Intent intentCadastro = new Intent(this, CadastrarUsuarioActivity.class);
+            btnCadastrar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(intentCadastro);
+                }
+            });
+
 
     }
 
