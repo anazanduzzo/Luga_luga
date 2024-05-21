@@ -27,7 +27,7 @@ public class loginActivity extends AppCompatActivity {
             inputSenha = findViewById(R.id.outlinedTextField2);
 
             btnLogin = findViewById(R.id.btnL);
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivity2.class);
 
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
