@@ -12,6 +12,36 @@
         <item
             android:id="@+id/nav_produtos"
             android:icon="@drawable/ic_menu_ba"
-            android:title="Produtos"/>
+            android:title="@string/produto"/>
+
+        <item
+            android:id="@+id/nav_solicitacao"
+            android:icon="@drawable/ic_menu_solicitacoes"
+            android:title="@string/solicitacao"/>
+
+        <item
+            android:id="@+id/nav_acompanhamento"
+            android:icon="@drawable/ic_menu_acompanhamento"
+            android:title="@string/acompanhamento"/>
+
+        <item
+            android:id="@+id/nav_atendimento"
+            android:icon="@drawable/ic_menu_atendimento"
+            android:title="@string/atendimento"/>
+
     </group>
+    <item android:title="Mais informações">
+
+        <menu>
+            <item
+                android:id="@+id/nav_sobreNos"
+                android:icon="@drawable/ic_menu_sobrenos"
+                android:title="@string/sobreNos"/>
+
+            <item
+                android:id="@+id/nav_FaleConosco"
+                android:icon="@drawable/ic_menu_faleconosco"
+                android:title="@string/faleConosco"/>
+        </menu>
+    </item>
 </menu>

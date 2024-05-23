@@ -1,0 +1,37 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="view.SobreNosFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Olá,somos a empresa LugaLuga!"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Bem-vindo à LugaLuga, onde a inovação se encontra com a conveniência. Oferecemos uma ampla seleção de eletrônicos de última geração para aluguel, desde smartphones e laptops até câmeras profissionais. Nosso processo de aluguel é simples e intuitivo, adaptado às suas necessidades. Priorizamos a qualidade, garantindo que todos os dispositivos sejam inspecionados e mantidos para desempenho máximo. Com planos flexíveis, você pode alugar por dias, semanas ou meses. Na LugaLuga, a liberdade de escolha é sua. Diga adeus à preocupação de comprar e mantenha-se sempre atualizado com as últimas tecnologias. Experimente a experiência LugaLuga hoje e descubra um novo nível de comodidade tecnológica."
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

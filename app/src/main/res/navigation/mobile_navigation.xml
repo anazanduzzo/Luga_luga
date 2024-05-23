@@ -18,6 +18,37 @@
         android:label="Produtos"
         tools:layout="@layout/fragment_produto"/>
 
+    <fragment
+        android:id="@+id/nav_solicitacao"
+        android:name="view.SolicitacaoFragment"
+        android:label="Solicitação"
+        tools:layout="@layout/fragment_solicitacao"/>
+
+    <fragment
+        android:id="@+id/nav_acompanhamento"
+        android:name="view.AcompanhamentoFragment"
+        android:label="Acompanhamento"
+        tools:layout="@layout/fragment_acompanhamento"/>
+
+    <fragment
+        android:id="@+id/nav_atendimento"
+        android:name="view.AtendimentoFragment"
+        android:label="Atendimento"
+        tools:layout="@layout/fragment_atendimento"/>
+
+    <fragment
+        android:id="@+id/nav_sobreNos"
+        android:name="view.SobreNosFragment"
+        android:label="Sobre nós"
+        tools:layout="@layout/fragment_sobre_nos"/>
+
+    <fragment
+        android:id="@+id/nav_FaleConosco"
+        android:name="view.FaleConoscoFragment"
+        android:label="Fale conosco"
+        tools:layout="@layout/fragment_fale_conosco"/>
+
+
 
 
 </navigation>
