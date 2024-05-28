@@ -2,13 +2,20 @@ package view;
 
 import android.os.Bundle;
 
+import androidx.activity.EdgeToEdge;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lugaluga.R;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,9 @@ public class FaleConoscoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextInputLayout emailContato ;
+
+
 
     public FaleConoscoFragment() {
         // Required empty public constructor
@@ -57,10 +67,43 @@ public class FaleConoscoFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fale_conosco, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_fale_conosco, container, false);
+
+        emailContato = view.findViewById(R.id.emailContato);
+
+        emailContato.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                Pattern pattern;
+                Matcher matcher;
+                String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+                pattern = Pattern.compile(EMAIL_PATTERN);
+                CharSequence cs = (CharSequence) s;
+                matcher = pattern.matcher(cs);
+                if (!(matcher.matches() == true)) {
+                    emailContato.setError("Invalid email");
+                } else {
+                    emailContato.setError("");
+                }
+            }
+        });
+
+        return view;
     }
 }
