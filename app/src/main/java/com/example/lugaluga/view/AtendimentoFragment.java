@@ -1,4 +1,4 @@
-package view;
+package com.example.lugaluga.view;
 
 import android.os.Bundle;
 

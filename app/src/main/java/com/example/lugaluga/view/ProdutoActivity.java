@@ -1,4 +1,4 @@
-package view;
+package com.example.lugaluga.view;
 
 
 import android.content.DialogInterface;
@@ -13,11 +13,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import com.example.lugaluga.R;
 
-import model.Produto;
+import com.example.lugaluga.R;
+import com.example.lugaluga.model.Produto;
+
 
 public class ProdutoActivity extends AppCompatActivity {
 

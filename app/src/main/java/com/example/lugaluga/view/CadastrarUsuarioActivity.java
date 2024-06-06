@@ -1,10 +1,13 @@
-package view;
+package com.example.lugaluga.view;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.lugaluga.R;
+import com.example.lugaluga.controller.UsuarioController;
+import com.example.lugaluga.model.Usuario;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.regex.Matcher;
@@ -23,12 +28,12 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
 
     private Spinner spinner;
 
-    private TextInputLayout input_email;
-    private TextInputLayout input_cpf;
+    private TextInputLayout input_nome,input_cpf,input_data,
+            input_cep,input_cidade,input_logradouro,input_numero,
+            input_complemento,input_bairro,input_email,input_senha;
 
-    private TextInputLayout input_cep;
+    private Button btnCadastrar;
 
-    private TextInputLayout input_data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,17 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         myToolbar.setTitle("LugaLuga Cadastro");
         myToolbar.setTitleTextColor(getColor(R.color.white));
         setSupportActionBar(myToolbar);
+
+        input_nome = findViewById(R.id.input_nome);
+        input_cidade = findViewById(R.id.input_cidade);
+        input_logradouro = findViewById(R.id.input_logradouro);
+        input_numero = findViewById(R.id.input_numero);
+        input_complemento = findViewById(R.id.input_complemento);
+        input_bairro = findViewById(R.id.input_bairro);
+        input_senha = findViewById(R.id.input_senha);
+
+
+        btnCadastrar = findViewById(R.id.btn_cadastrar);
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner_uf);
 
@@ -199,8 +215,6 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         mascara += m;
                         continue;
                     }
-
-
                     try {
                         mascara += str.charAt(i);
                     } catch (Exception e) {
@@ -217,5 +231,36 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
 
             }
         });
+
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UsuarioController crud = new UsuarioController(getApplicationContext());
+                Usuario usuario = new Usuario();
+                usuario.setNome(input_nome.getEditText().getText().toString());
+                usuario.setCpf(input_cpf.getEditText().getText().toString());
+                usuario.setData(input_data.getEditText().getText().toString());
+                usuario.setCep(input_cep.getEditText().getText().toString());
+                usuario.setCidade(input_cidade.getEditText().getText().toString());
+                usuario.setUf(spinner.getSelectedItem().toString());
+                usuario.setLogradouro(input_logradouro.getEditText().getText().toString());
+                usuario.setNumero(Integer.parseInt(input_numero.getEditText().getText().toString()));
+                usuario.setComplemento(input_complemento.getEditText().getText().toString());
+                usuario.setBairro(input_bairro.getEditText().getText().toString());
+                usuario.setEmail(input_email.getEditText().getText().toString());
+                usuario.setSenha(input_senha.getEditText().getText().toString());
+
+                String resultado;
+
+                resultado = crud.insereDados(usuario.getNome(),usuario.getCpf(),
+                        usuario.getData(),usuario.getCep(),usuario.getCidade(),
+                        usuario.getLogradouro(), usuario.getNumero(),
+                        usuario.getComplemento(), usuario.getBairro(), 0, usuario.getEmail(),
+                        usuario.getSenha(), usuario.getUf());
+
+                Toast.makeText(CadastrarUsuarioActivity.this, resultado, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

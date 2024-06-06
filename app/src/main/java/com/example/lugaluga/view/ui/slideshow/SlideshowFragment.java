@@ -1,4 +1,4 @@
-package view.ui.home;
+package com.example.lugaluga.view.ui.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,28 +9,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lugaluga.databinding.FragmentHomeBinding;
+import com.example.lugaluga.databinding.FragmentSlideshowBinding;
 
-import java.util.ArrayList;
-import java.util.List;
+public class SlideshowFragment extends Fragment {
 
-import model.Produto;
-import view.adapter.AdapterProduto;
-
-public class HomeFragment extends Fragment {
-    private FragmentHomeBinding binding;
+    private FragmentSlideshowBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        SlideshowViewModel slideshowViewModel =
+                new ViewModelProvider(this).get(SlideshowViewModel.class);
 
-
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.bemVindo;
-
+        final TextView textView = binding.textSlideshow;
+        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

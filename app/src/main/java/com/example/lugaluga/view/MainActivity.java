@@ -1,33 +1,26 @@
-package view;
+package com.example.lugaluga.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lugaluga.R;
+import com.example.lugaluga.model.Produto;
+import com.example.lugaluga.view.adapter.AdapterProduto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Produto;
-import view.adapter.AdapterProduto;
 
 public class MainActivity extends AppCompatActivity {
 

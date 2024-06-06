@@ -1,4 +1,4 @@
-package view.ui.slideshow;
+package com.example.lugaluga.view.ui.slideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

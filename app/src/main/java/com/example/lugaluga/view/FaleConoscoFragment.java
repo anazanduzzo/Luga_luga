@@ -1,8 +1,7 @@
-package view;
+package com.example.lugaluga.view;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;

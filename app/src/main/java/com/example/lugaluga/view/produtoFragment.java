@@ -1,4 +1,4 @@
-package view;
+package com.example.lugaluga.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +20,8 @@ import com.example.lugaluga.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Produto;
-import view.adapter.AdapterProduto;
+import com.example.lugaluga.model.Produto;
+import com.example.lugaluga.view.adapter.AdapterProduto;
 
 public class produtoFragment extends Fragment {
 
