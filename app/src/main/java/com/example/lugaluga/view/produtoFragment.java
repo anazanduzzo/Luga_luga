@@ -20,6 +20,7 @@ import com.example.lugaluga.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.lugaluga.controller.ProdutosController;
 import com.example.lugaluga.model.Produto;
 import com.example.lugaluga.view.adapter.AdapterProduto;
 
@@ -51,7 +52,7 @@ public class produtoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_produto,container,false);
+        View view = inflater.inflate(R.layout.fragment_produto, container, false);
 
         recyclerView = view.findViewById(R.id.listaProdutos);
 
@@ -69,15 +70,15 @@ public class produtoFragment extends Fragment {
                 new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(getContext(),ProdutoActivity.class);
-                        intent.putExtra("produto",produtoList.get(position));
+                        Intent intent = new Intent(getContext(), ProdutoActivity.class);
+                        intent.putExtra("produto", produtoList.get(position));
                         startActivity(intent);
 
                     }
 
                     @Override
                     public void onLongItemClick(View view, int position) {
-                        Toast.makeText(getContext(),produtoList.get(position).getDescricao(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), produtoList.get(position).getDescricao(), Toast.LENGTH_SHORT).show();
 
                     }
 
@@ -89,95 +90,8 @@ public class produtoFragment extends Fragment {
 
         return view;
     }
-
-    public void CriarListaProdutos(){
-
-        Produto produto = new Produto("Iphone 13",
-                "Iphone 13 64gb,branco",
-                2500,
-                "10",
-                true
-        );
-        produtoList.add(produto);
-
-        produto = new Produto("Fone",
-                "fone bluetooth,cor roxa",
-                200,
-                "0",
-                false
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "Notebook",
-                "Dell, SSD 256gb, cor preta",
-                3500,
-                "0",
-                false
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "samsung s23",
-                "256gb,8GRAM,cor dourada",
-                2500,
-                "8",
-                true
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "Apple Watch",
-                "cor rosa",
-                2300,
-                "4",
-                true
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "Air tag",
-                "localizador da apple",
-                369,
-                "0",
-                false
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "carregador por indução",
-                "cor branca",
-                100,
-                "50",
-                true
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "Ipad pro",
-                "SSD 256gb, cor roxa",
-                7100,
-                "3",
-                true
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "Ring light",
-                "12 polegadas,suporte cor preta",
-                370,
-                "25",
-                true
-        );
-        produtoList.add(produto);
-
-        produto = new Produto(
-                "Carregador portatil",
-                "carregamento rápido por indução",
-                265,
-                "18",
-                true
-        );
-        produtoList.add(produto);
+    public void CriarListaProdutos() {
+        ProdutosController produtosController = new ProdutosController(getContext());
+        produtoList.addAll(produtosController.carregaProdutos());
     }
 }
