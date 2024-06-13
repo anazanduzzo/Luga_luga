@@ -2,6 +2,7 @@ package com.example.lugaluga.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 public class UsuarioController {
@@ -13,7 +14,7 @@ public class UsuarioController {
         banco = new CriarBanco(context);
     }
 
-    public String insereDados(String nome, String cpf, String dataNasc, String cep, String cidade,
+    public boolean insereDados(String nome, String cpf, String dataNasc, String cep, String cidade,
                               String logradouro, int numero, String complemento, String bairro,
                               int telefone, String email, String senha, String uf){
         ContentValues valores;
@@ -39,9 +40,24 @@ public class UsuarioController {
         db.close();
 
         if (resultado == -1){
-            return "Erro ao inserir o registro";
+            return false;
         }
-        return "Inserido com sucesso";
+        return true;
+    }
+
+    public boolean verificaUsuario(String email,String senha){
+        long resuntado;
+        String selection = "email = ? and senha = ?";
+        String[] selectionArgs = {email,senha};
+        Cursor cursor;
+        db = banco.getReadableDatabase();
+        cursor = db.query(CriarBanco.NOME_TABELA,null,selection,selectionArgs,
+                null,null,null,null);
+        if (cursor.getCount() > 0){
+            return true;
+        }
+
+        return false;
     }
 
 }

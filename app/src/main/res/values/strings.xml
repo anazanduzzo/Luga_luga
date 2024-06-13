@@ -79,4 +79,5 @@
     <string name="atendimento">Atendimento</string>
     <string name="sobreNos">Sobre Nós</string>
     <string name="faleConosco">Fale Conosco</string>
+    <string name="consCep">Consultar</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.lugaluga.view;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,8 +33,11 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
             input_cep,input_cidade,input_logradouro,input_numero,
             input_complemento,input_bairro,input_email,input_senha;
 
+    private Button consultar;
+
     private Button btnCadastrar;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -250,7 +254,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                 usuario.setEmail(input_email.getEditText().getText().toString());
                 usuario.setSenha(input_senha.getEditText().getText().toString());
 
-                String resultado;
+                boolean resultado;
 
                 resultado = crud.insereDados(usuario.getNome(),usuario.getCpf(),
                         usuario.getData(),usuario.getCep(),usuario.getCidade(),
@@ -258,9 +262,24 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                         usuario.getComplemento(), usuario.getBairro(), 0, usuario.getEmail(),
                         usuario.getSenha(), usuario.getUf());
 
-                Toast.makeText(CadastrarUsuarioActivity.this, resultado, Toast.LENGTH_SHORT).show();
+                if (resultado) {
+                    Toast.makeText(CadastrarUsuarioActivity.this, "Inserido com sucesso!", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    Toast.makeText(CadastrarUsuarioActivity.this,"Erro na inserção!", Toast.LENGTH_SHORT).show();
+                }
+
+
             }
         });
 
+        consultar.findViewById(R.id.consultar);
+        consultar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 }
