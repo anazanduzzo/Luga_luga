@@ -1,5 +1,7 @@
 package com.example.lugaluga.view;
 
+
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
@@ -274,7 +276,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
             }
         });
 
-        consultar.findViewById(R.id.consultar);
+        consultar = findViewById(R.id.consultar);
         consultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

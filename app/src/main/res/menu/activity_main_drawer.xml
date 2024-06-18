@@ -29,6 +29,11 @@
             android:icon="@drawable/ic_menu_atendimento"
             android:title="@string/atendimento"/>
 
+        <item
+            android:id="@+id/nav_usuario"
+            android:icon="@drawable/contato"
+            android:title="@string/usuarioCad"/>
+
     </group>
     <item android:title="Mais informações">
 

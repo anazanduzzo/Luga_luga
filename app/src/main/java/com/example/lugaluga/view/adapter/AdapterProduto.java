@@ -51,8 +51,6 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.ViewHold
             nomeProduto = itemView.findViewById(R.id.nomeProduto);
             precoProduto = itemView.findViewById(R.id.precoProduto);
             descProduto = itemView.findViewById(R.id.descProduto);
-
-
         }
     }
 }

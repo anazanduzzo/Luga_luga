@@ -37,6 +37,12 @@
         tools:layout="@layout/fragment_atendimento"/>
 
     <fragment
+        android:id="@+id/nav_usuario"
+        android:name="com.example.lugaluga.view.UsuariosCadastradosFragment"
+        android:label="Usuarios"
+        tools:layout="@layout/fragment_usuarios_cadastrados"/>
+
+    <fragment
         android:id="@+id/nav_sobreNos"
         android:name="com.example.lugaluga.view.SobreNosFragment"
         android:label="Sobre nós"

@@ -5,6 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.lugaluga.model.Produto;
+import com.example.lugaluga.model.Usuario;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class UsuarioController {
 
     private SQLiteDatabase db;
@@ -58,6 +64,24 @@ public class UsuarioController {
         }
 
         return false;
+    }
+
+    public List<Usuario> carregaUsuario(){
+        Cursor cursor;
+        List<Usuario>usuarioList = new ArrayList<>();
+        db = banco.getReadableDatabase();
+        cursor = db.query("usuarios",null,null,null,null,null,null);
+
+        if (db != null){
+            while (cursor.moveToNext()){
+                Usuario usuario = new Usuario();
+                usuario.setNome(cursor.getString(1));
+                usuario.setCpf(cursor.getString(2));
+                usuario.setEmail(cursor.getString(3));
+                usuarioList.add(usuario);
+            }
+        }
+        return usuarioList;
     }
 
 }
